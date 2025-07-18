@@ -153,3 +153,14 @@ function tampilkanHasilPencarian(hasil) {
     // Tambahkan hasil baru setelah search box
     document.querySelector('.search-box').after(container);
 }
+
+// Pencarian saat mengetik (opsional)
+document.getElementById('search-input').addEventListener('input', function(e) {
+    if (e.target.value.length > 2) {  // Hanya search jika input > 2 karakter
+        const keyword = e.target.value.toLowerCase();
+        const hasilPencarian = materiKelas.filter(materi => 
+            materi.judul.toLowerCase().includes(keyword)
+        );
+        tampilkanHasilPencarian(hasilPencarian);
+    }
+});
