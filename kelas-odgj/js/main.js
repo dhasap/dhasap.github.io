@@ -107,3 +107,49 @@ document.querySelector('.search-box button').addEventListener('click', function(
     // Contoh: Redirect ke halaman pencarian
     // window.location.href = `search.html?q=${searchTerm}`;
 });
+
+// Data materi contoh (bisa diganti dengan data real dari database)
+const materiKelas = [
+    { judul: "Matematika - Trigonometri", link: "materi/trigonometri.html" },
+    { judul: "Fisika - Kinematika", link: "materi/kinematika.html" },
+    { judul: "Kimia - Stoikiometri", link: "materi/stoikiometri.html" },
+    { judul: "Biologi - Sel", link: "materi/sel.html" }
+];
+
+// Fungsi pencarian
+document.getElementById('search-button').addEventListener('click', function() {
+    const keyword = document.getElementById('search-input').value.toLowerCase();
+    const hasilPencarian = materiKelas.filter(materi => 
+        materi.judul.toLowerCase().includes(keyword)
+    );
+
+    tampilkanHasilPencarian(hasilPencarian);
+});
+
+// Fungsi tampilkan hasil
+function tampilkanHasilPencarian(hasil) {
+    const container = document.createElement('div');
+    container.className = 'search-results';
+
+    if (hasil.length === 0) {
+        container.innerHTML = '<p class="no-result">Materi tidak ditemukan 😢</p>';
+    } else {
+        container.innerHTML = `
+            <h3>Hasil Pencarian:</h3>
+            <ul class="result-list">
+                ${hasil.map(materi => `
+                    <li>
+                        <a href="${materi.link}">${materi.judul}</a>
+                    </li>
+                `).join('')}
+            </ul>
+        `;
+    }
+
+    // Hapus hasil sebelumnya (jika ada)
+    const oldResults = document.querySelector('.search-results');
+    if (oldResults) oldResults.remove();
+
+    // Tambahkan hasil baru setelah search box
+    document.querySelector('.search-box').after(container);
+}
