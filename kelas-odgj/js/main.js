@@ -1,166 +1,32 @@
-// Animasi Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+// js/main.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // 1. Inisialisasi Feather Icons
+    // This function finds all elements with the `data-feather` attribute and replaces them with SVG icons.
+    try {
+        feather.replace();
+    } catch (e) {
+        console.error('Feather Icons could not be initialized. Make sure the script is loaded.');
+    }
+
+    // 2. Mobile Menu Toggle
+    // This handles the opening and closing of the navigation menu on mobile devices.
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            // Change icon from menu to x and vice-versa
+            const icon = menuToggle.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.setAttribute('data-feather', 'x');
+            } else {
+                icon.setAttribute('data-feather', 'menu');
+            }
+            feather.replace(); // Re-run to draw the new icon
         });
-    });
-});
-
-// Fitur Dark Mode (Opsional)
-const darkModeToggle = document.createElement('button');
-darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-document.body.prepend(darkModeToggle);
-
-// Generate Kalender
-function generateCalendar() {
-    const calendar = document.getElementById('calendar');
-    const date = new Date();
-    const month = date.getMonth();
-    const year = date.getFullYear();
-    
-    // Dummy event (bisa diganti dengan data real)
-    const events = {
-        15: "Ujian Matematika",
-        20: "Kegiatan Pramuka",
-        25: "Pembagian Raport"
-    };
-
-    // Kosongkan kalender
-    calendar.innerHTML = '';
-
-    // Tambahkan header hari
-    const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-    days.forEach(day => {
-        const dayHeader = document.createElement('div');
-        dayHeader.className = 'calendar-header';
-        dayHeader.textContent = day;
-        calendar.appendChild(dayHeader);
-    });
-
-    // Hitung hari dalam bulan
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    
-    // Generate tanggal
-    for (let i = 1; i <= daysInMonth; i++) {
-        const dayElement = document.createElement('div');
-        dayElement.className = 'calendar-day';
-        
-        // Cek hari ini
-        if (i === date.getDate()) {
-            dayElement.classList.add('today');
-        }
-        
-        // Cek event
-        if (events[i]) {
-            dayElement.classList.add('event');
-            dayElement.innerHTML = `<strong>${i}</strong><br><small>${events[i]}</small>`;
-        } else {
-            dayElement.textContent = i;
-        }
-        
-        calendar.appendChild(dayElement);
-    }
-}
-
-// Panggil fungsi saat halaman dimuat
-window.onload = generateCalendar;
-
-// Data papan peringkat
-const topStudents = [
-    { name: "Dhany (Raja Iblis)", score: 98 },
-    { name: "Farkhan Kun", score: 95 },
-    { name: "Ilham Rohim chan", score: 93 },
-    { name: "Reza blonde", score: 91 },
-    { name: "Ustad Ibnu", score: 89 }
-];
-
-function updateLeaderboard() {
-    const tbody = document.getElementById('leaderboard-body');
-    tbody.innerHTML = '';
-    
-    topStudents.forEach((student, index) => {
-        const row = document.createElement('tr');
-        
-        row.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${student.name}</td>
-            <td>${student.score}</td>
-        `;
-        
-        tbody.appendChild(row);
-    });
-}
-
-// Panggil fungsi saat halaman dimuat
-window.onload = function() {
-    generateCalendar();
-    updateLeaderboard();
-};
-
-// Fungsi pencarian sederhana
-document.querySelector('.search-box button').addEventListener('click', function() {
-    const searchTerm = document.querySelector('.search-box input').value.toLowerCase();
-    alert(`Fitur pencarian untuk "${searchTerm}" akan dikembangkan lebih lanjut!`);
-    
-    // Contoh: Redirect ke halaman pencarian
-    // window.location.href = `search.html?q=${searchTerm}`;
-});
-
-// Data materi contoh (bisa diganti dengan data real dari database)
-const materiKelas = [
-    { judul: "Matematika - Trigonometri", link: "materi/trigonometri.html" },
-    { judul: "Fisika - Kinematika", link: "materi/kinematika.html" },
-    { judul: "Kimia - Stoikiometri", link: "materi/stoikiometri.html" },
-    { judul: "Biologi - Sel", link: "materi/sel.html" }
-];
-
-// Fungsi pencarian
-document.getElementById('search-button').addEventListener('click', function() {
-    const keyword = document.getElementById('search-input').value.toLowerCase();
-    const hasilPencarian = materiKelas.filter(materi => 
-        materi.judul.toLowerCase().includes(keyword)
-    );
-
-    tampilkanHasilPencarian(hasilPencarian);
-});
-
-// Fungsi tampilkan hasil
-function tampilkanHasilPencarian(hasil) {
-    const container = document.createElement('div');
-    container.className = 'search-results';
-
-    if (hasil.length === 0) {
-        container.innerHTML = '<p class="no-result">Materi tidak ditemukan 😢</p>';
-    } else {
-        container.innerHTML = `
-            <h3>Hasil Pencarian:</h3>
-            <ul class="result-list">
-                ${hasil.map(materi => `
-                    <li>
-                        <a href="${materi.link}">${materi.judul}</a>
-                    </li>
-                `).join('')}
-            </ul>
-        `;
     }
 
-    // Hapus hasil sebelumnya (jika ada)
-    const oldResults = document.querySelector('.search-results');
-    if (oldResults) oldResults.remove();
-
-    // Tambahkan hasil baru setelah search box
-    document.querySelector('.search-box').after(container);
-}
-
-// Pencarian saat mengetik (opsional)
-document.getElementById('search-input').addEventListener('input', function(e) {
-    if (e.target.value.length > 2) {  // Hanya search jika input > 2 karakter
-        const keyword = e.target.value.toLowerCase();
-        const hasilPencarian = materiKelas.filter(materi => 
-            materi.judul.toLowerCase().includes(keyword)
-        );
-        tampilkanHasilPencarian(hasilPencarian);
-    }
 });
