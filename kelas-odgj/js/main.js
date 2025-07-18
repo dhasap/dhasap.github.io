@@ -66,3 +66,35 @@ function generateCalendar() {
 
 // Panggil fungsi saat halaman dimuat
 window.onload = generateCalendar;
+
+// Data papan peringkat
+const topStudents = [
+    { name: "Dhany (Raja Iblis)", score: 98 },
+    { name: "Farkhan Kun", score: 95 },
+    { name: "Ilham Rohim chan", score: 93 },
+    { name: "Reza blonde", score: 91 },
+    { name: "Ustad Ibnu", score: 89 }
+];
+
+function updateLeaderboard() {
+    const tbody = document.getElementById('leaderboard-body');
+    tbody.innerHTML = '';
+    
+    topStudents.forEach((student, index) => {
+        const row = document.createElement('tr');
+        
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${student.name}</td>
+            <td>${student.score}</td>
+        `;
+        
+        tbody.appendChild(row);
+    });
+}
+
+// Panggil fungsi saat halaman dimuat
+window.onload = function() {
+    generateCalendar();
+    updateLeaderboard();
+};
