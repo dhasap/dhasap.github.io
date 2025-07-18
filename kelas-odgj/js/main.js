@@ -98,3 +98,12 @@ window.onload = function() {
     generateCalendar();
     updateLeaderboard();
 };
+
+// Fungsi pencarian sederhana
+document.querySelector('.search-box button').addEventListener('click', function() {
+    const searchTerm = document.querySelector('.search-box input').value.toLowerCase();
+    alert(`Fitur pencarian untuk "${searchTerm}" akan dikembangkan lebih lanjut!`);
+    
+    // Contoh: Redirect ke halaman pencarian
+    // window.location.href = `search.html?q=${searchTerm}`;
+});
