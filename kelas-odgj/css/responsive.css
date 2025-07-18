@@ -1,1 +1,84 @@
+/* css/responsive.css */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .main-grid {
+        grid-template-columns: 1fr; /* Stack columns */
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .logo-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .nav-links, .search-bar {
+        display: none; /* Hide desktop nav and search */
+    }
+
+    .mobile-menu-button {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--heading-color);
+    }
+
+    .mobile-menu {
+        display: none; /* Initially hidden */
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        position: absolute;
+        top: 71px; /* Height of header */
+        left: 0;
+        box-shadow: 0 4px 6px var(--shadow-color);
+        padding: 10px 0;
+    }
+    
+    .mobile-menu.active {
+        display: flex; /* Show when active */
+    }
+
+    .mobile-menu .nav-link {
+        padding: 15px 20px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .mobile-menu .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .mobile-menu .nav-link::after {
+        display: none; /* No underline on mobile menu */
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .calendar {
+        gap: 4px;
+    }
+
+    .day-cell {
+        padding: 8px 2px;
+        font-size: 0.8rem;
+    }
+
+    .day-cell.event span {
+        display: none; /* Hide event text, color is enough */
+    }
+}
 
