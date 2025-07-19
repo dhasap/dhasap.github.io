@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadwal Pelajaran - Kelas XII TJKT 3</title>
-    
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
-    <!-- Header -->
     <header class="header sticky-top">
         <div class="container">
             <nav class="navbar">
@@ -31,13 +30,7 @@
                     <a href="materi.html" class="nav-link active">Jadwal Pelajaran</a>
                     <a href="siswa.html" class="nav-link">Daftar Siswa</a>
                 </div>
-                 <div class="search-bar">
-                    <input type="text" placeholder="Cari materi...">
-                    <button><i data-feather="search"></i></button>
-                </div>
-                <button class="mobile-menu-button" id="mobile-menu-toggle">
-                    <i data-feather="menu"></i>
-                </button>
+                <button class="mobile-menu-button" id="mobile-menu-toggle"><i data-feather="menu"></i></button>
             </nav>
         </div>
     </header>
@@ -48,76 +41,87 @@
         <a href="siswa.html" class="nav-link">Daftar Siswa</a>
     </div>
 
-    <!-- Main Content -->
     <main class="container">
         <section class="card">
-            <h2 class="page-title">Jadwal Pelajaran Kelas XII TJKT 3</h2>
-            <p class="page-intro">Berikut adalah jadwal pelajaran dalam format tabel mingguan. Di layar kecil, tabel bisa digeser ke samping.</p>
+            <div class="page-header">
+                <div>
+                    <h2 class="page-title">Jadwal Pelajaran Kelas XII TJKT 3</h2>
+                    <p class="page-intro">Jadwal hari ini disorot otomatis. Geser tabel jika perlu.</p>
+                </div>
+                <button id="highlight-today-btn" class="btn btn-secondary">
+                    <i data-feather="sun"></i> Sorot Hari Ini
+                </button>
+            </div>
         </section>
 
         <section class="card">
             <div class="table-container">
-                <table class="schedule-table">
+                <table class="schedule-table-clean">
                     <thead>
                         <tr>
-                            <th>Jam</th>
-                            <th>Senin</th>
-                            <th>Selasa</th>
-                            <th>Rabu</th>
-                            <th>Kamis</th>
-                            <th>Jumat</th>
-                            <th>Sabtu</th>
+                            <th>Hari</th>
+                            <th>1 <small>07:00-07:40</small></th>
+                            <th>2 <small>07:40-08:20</small></th>
+                            <th>3 <small>08:20-09:00</small></th>
+                            <th class="break-col-header">Istirahat</th>
+                            <th>4 <small>09:30-10:10</small></th>
+                            <th>5 <small>10:10-10:50</small></th>
+                            <th>6 <small>10:50-11:30</small></th>
+                            <th class="break-col-header">Istirahat</th>
+                            <th>7 <small>12:00-12:40</small></th>
+                            <th>8 <small>12:40-13:20</small></th>
+                            <th>9 <small>13:20-14:00</small></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="time-col">Ke 1-2</td>
-                            <td class="subject-pabp" rowspan="2">PABP</td>
-                            <td class="subject-asj" rowspan="2">ASJ</td>
-                            <td class="subject-tlj" rowspan="2">TLJ</td>
-                            <td class="subject-asj" rowspan="4">ASJ</td>
-                            <td class="subject-mat">Matematika</td>
-                            <td class="subject-aij" rowspan="2">AIJ</td>
+                        <tr data-day="1">
+                            <td class="day-col">Senin</td>
+                            <td colspan="2"><div class="subject-cell subject-pabp"><span>PABP</span><small>Guru A</small></div></td>
+                            <td><div class="subject-cell subject-ppkn"><span>PPKN</span><small>Guru B</small></div></td>
+                            <td rowspan="6" class="break-col-body"></td>
+                            <td><div class="subject-cell subject-ppkn"><span>PPKN</span><small>Guru B</small></div></td>
+                            <td colspan="2"><div class="subject-cell subject-bing"><span>Bhs. Inggris</span><small>Guru C</small></div></td>
+                            <td rowspan="6" class="break-col-body"></td>
+                            <td colspan="2"><div class="subject-cell subject-bindo"><span>Bhs. Indonesia</span><small>Guru D</small></div></td>
+                            <td class="empty-col"></td>
                         </tr>
-                        <tr>
-                            <td class="time-col">Ke 3-4</td>
-                            <td class="subject-pabp">PABP</td>
+                        <tr data-day="2">
+                            <td class="day-col">Selasa</td>
+                            <td colspan="2"><div class="subject-cell subject-asj"><span>ASJ</span><small>Guru E</small></div></td>
+                            <td colspan="2"><div class="subject-cell subject-aij"><span>AIJ</span><small>Guru F</small></div></td>
+                            <td><div class="subject-cell subject-bk"><span>BK</span><small>Guru G</small></div></td>
+                            <td><div class="subject-cell subject-bing"><span>Bhs. Inggris</span><small>Guru C</small></div></td>
+                            <td colspan="2"><div class="subject-cell subject-mat"><span>Matematika</span><small>Guru H</small></div></td>
+                            <td class="empty-col"></td>
                         </tr>
-                        <tr>
-                            <td class="time-col">Ke 5-6</td>
-                            <td class="subject-ppkn" rowspan="2">PPKN</td>
-                            <td class="subject-aij" rowspan="2">AIJ</td>
-                            <td class="subject-pkkw" rowspan="2">PKKW</td>
-                            <td class="subject-bjawa">B. Jawa</td>
-                            <td class="subject-asj" rowspan="2">ASJ</td>
+                        <tr data-day="3">
+                            <td class="day-col">Rabu</td>
+                            <td colspan="2"><div class="subject-cell subject-tlj"><span>TLJ</span><small>Guru I</small></div></td>
+                            <td colspan="2"><div class="subject-cell subject-pkkw"><span>PKKW</span><small>Guru J</small></div></td>
+                            <td colspan="4"><div class="subject-cell subject-aij"><span>AIJ</span><small>Guru F</small></div></td>
+                            <td class="empty-col"></td>
                         </tr>
-                        <tr>
-                            <td class="time-col">Istirahat</td>
-                            <td class="break-col" colspan="6">Istirahat</td>
+                        <tr data-day="4">
+                            <td class="day-col">Kamis</td>
+                            <td colspan="4"><div class="subject-cell subject-asj"><span>ASJ</span><small>Guru E</small></div></td>
+                            <td colspan="4"><div class="subject-cell subject-tlj"><span>TLJ</span><small>Guru I</small></div></td>
+                            <td class="empty-col"></td>
                         </tr>
-                        <tr>
-                            <td class="time-col">Ke 7-8</td>
-                            <td class="subject-bing" rowspan="2">Bhs. Inggris</td>
-                            <td>BK</td>
-                            <td class="subject-aij" rowspan="4">AIJ</td>
-                            <td class="subject-tlj" rowspan="4">TLJ</td>
-                            <td class="subject-bk">BK</td>
-                            <td class="subject-pkkw" rowspan="3">PKKW</td>
+                        <tr data-day="5">
+                            <td class="day-col">Jumat</td>
+                            <td><div class="subject-cell subject-mat"><span>Matematika</span><small>Guru H</small></div></td>
+                            <td><div class="subject-cell subject-pabp"><span>PABP</span><small>Guru A</small></div></td>
+                            <td><div class="subject-cell subject-bjawa"><span>B. Jawa</span><small>Guru K</small></div></td>
+                            <td><div class="subject-cell subject-bk"><span>BK</span><small>Guru G</small></div></td>
+                            <td colspan="3" class="empty-col"></td>
+                            <td class="empty-col"></td>
                         </tr>
-                        <tr>
-                             <td class="time-col">Ke 9-10</td>
-                            <td>Bhs. Inggris</td>
-                        </tr>
-                        <tr>
-                             <td class="time-col">Istirahat</td>
-                            <td class="break-col" colspan="6">Istirahat Sholat</td>
-                        </tr>
-                        <tr>
-                             <td class="time-col">Ke 11-12</td>
-                            <td class="subject-bindo" rowspan="2">Bhs. Indonesia</td>
-                            <td class="subject-mat" rowspan="2">Matematika</td>
-                            <td>-</td>
-                            <td>-</td>
+                        <tr data-day="6">
+                            <td class="day-col">Sabtu</td>
+                            <td colspan="2"><div class="subject-cell subject-aij"><span>AIJ</span><small>Guru F</small></div></td>
+                            <td colspan="2"><div class="subject-cell subject-asj"><span>ASJ</span><small>Guru E</small></div></td>
+                            <td colspan="3"><div class="subject-cell subject-pkkw"><span>PKKW</span><small>Guru J</small></div></td>
+                            <td class="empty-col"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -125,14 +129,12 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Kelas XII TJKT 3 | Dibuat dengan <span class="heart">&hearts;</span> oleh Dhany</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
