@@ -29,4 +29,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Fungsi Pencarian untuk Daftar Siswa
+const studentSearchInput = document.getElementById('studentSearchInput');
+if (studentSearchInput) {
+    studentSearchInput.addEventListener('keyup', function() {
+        const filter = studentSearchInput.value.toUpperCase();
+        const tableBody = document.getElementById('studentTableBody');
+        const rows = tableBody.getElementsByTagName('tr');
+
+        for (let i = 0; i < rows.length; i++) {
+            let nameColumn = rows[i].getElementsByTagName('td')[2]; // Kolom nama ada di index ke-2
+            if (nameColumn) {
+                let textValue = nameColumn.textContent || nameColumn.innerText;
+                if (textValue.toUpperCase().indexOf(filter) > -1) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    });
+}
+    
 });
