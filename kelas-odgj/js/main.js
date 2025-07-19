@@ -68,33 +68,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// 5. Fungsi Efek Gelembung (Ripple) pada Tombol
-function createRipple(event) {
-    const button = event.currentTarget;
+// 5. Fungsi Efek Gelembung (Ripple) di Seluruh Halaman
+document.addEventListener("click", function (event) {
+    // Jangan jalankan efek jika yang diklik adalah tombol (karena tombol sudah punya efek hover)
+    if (event.target.closest('.btn')) {
+        return;
+    }
 
     // Buat elemen span untuk gelembung
     const circle = document.createElement("span");
-    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const diameter = Math.max(document.documentElement.clientWidth, document.documentElement.clientHeight);
     const radius = diameter / 2;
 
-    // Atur posisi gelembung tepat di lokasi klik/sentuhan
-    circle.style.width = circle.style.height = `${diameter}px`;
-    circle.style.left = `${event.clientX - (button.getBoundingClientRect().left + radius)}px`;
-    circle.style.top = `${event.clientY - (button.getBoundingClientRect().top + radius)}px`;
-    circle.classList.add("ripple");
+    // Atur posisi gelembung tepat di lokasi kursor
+    circle.style.width = circle.style.height = `100px`;
+    circle.style.left = `${event.pageX - 50}px`; // pageX memperhitungkan scroll
+    circle.style.top = `${event.pageY - 50}px`;  // pageY memperhitungkan scroll
+    circle.classList.add("ripple-body");
 
-    // Hapus gelembung yang mungkin sudah ada agar tidak menumpuk
-    const ripple = button.getElementsByClassName("ripple")[0];
-    if (ripple) {
-        ripple.remove();
-    }
+    // Tambahkan gelembung ke body
+    document.body.appendChild(circle);
 
-    // Tambahkan gelembung ke tombol
-    button.appendChild(circle);
-}
-
-// Terapkan efek ke semua elemen dengan kelas .btn
-const buttons = document.querySelectorAll(".btn");
-buttons.forEach(button => {
-    button.addEventListener("click", createRipple);
+    // Hapus gelembung setelah animasi selesai
+    setTimeout(() => {
+        circle.remove();
+    }, 600); // 600ms sesuai durasi animasi
 });
