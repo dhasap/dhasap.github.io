@@ -490,6 +490,121 @@ main {
     background-color: #3b82f6; /* Blue */
 }
 
+/* === GAYA FINAL UNTUK TABEL JADWAL (FIXED LAYOUT) === */
+
+/* Kontainer tabel, ini yang membuat bisa di-scroll */
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Scroll halus di iOS */
+}
+
+.schedule-table-fixed {
+    width: 100%;
+    min-width: 1000px; /* Lebar minimum agar tabel tidak hancur */
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 0.9rem;
+    border: 1px solid #dee2e6;
+}
+
+/* Header Tabel */
+.schedule-table-fixed thead th {
+    background-color: #f8f9fa;
+    color: var(--heading-color);
+    padding: 10px 5px;
+    font-weight: 600;
+    vertical-align: middle;
+    border: 1px solid #dee2e6;
+    white-space: nowrap; /* Mencegah teks header wrapping */
+}
+.schedule-table-fixed thead th small {
+    font-weight: 400;
+    font-size: 0.7rem;
+    display: block;
+    color: var(--text-color);
+}
+.schedule-table-fixed thead .break-col-header {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    background-color: #e9ecef;
+}
+
+/* Body Tabel */
+.schedule-table-fixed tbody td {
+    border: 1px solid #dee2e6;
+    padding: 0; /* Padding diatur di dalam .subject-cell */
+    vertical-align: middle;
+    height: 80px;
+}
+
+/* Sel Hari */
+.day-col {
+    font-weight: 700;
+    background-color: #f8f9fa;
+    width: 90px;
+    padding: 15px 5px;
+    white-space: nowrap;
+}
+
+/* Sel Istirahat */
+.break-col-body {
+    background-color: #f1f3f5;
+}
+
+/* Sel Kosong */
+.empty-col {
+    background-color: #f8f9fa;
+}
+
+/* Konten di dalam sel mata pelajaran (INI PERBAIKAN UTAMA) */
+.subject-cell {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    box-sizing: border-box;
+    line-height: 1.4; /* Memberi sedikit ruang antar baris */
+}
+.subject-cell span {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--heading-color);
+    display: block; /* Memaksa ke baris baru */
+}
+.subject-cell small {
+    font-size: 0.75rem;
+    color: var(--text-color);
+    margin-top: 4px;
+    display: block; /* Memaksa ke baris baru */
+}
+
+/* Gaya untuk baris yang disorot */
+.schedule-table-fixed tbody tr.today {
+    outline: 2px solid var(--primary-color);
+    outline-offset: -2px;
+}
+.schedule-table-fixed tbody tr.today .day-col {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Warna Latar Belakang Mata Pelajaran */
+.subject-pabp { background-color: #fff9db; }
+.subject-ppkn { background-color: #ffeded; }
+.subject-bing { background-color: #eefcff; }
+.subject-bindo { background-color: #f5f3ff; }
+.subject-asj { background-color: #eff6ff; }
+.subject-aij { background-color: #fdf4ff; }
+.subject-tlj { background-color: #fdf2f8; }
+.subject-pkkw { background-color: #f0fdf4; }
+.subject-mat { background-color: #fffbeb; }
+.subject-bk { background-color: #f8f9fa; }
+.subject-bjawa { background-color: #fff7ed; }
+
 /* === GAYA UNTUK JADWAL INTERAKTIF === */
 
 /* Layout untuk header halaman dengan tombol */
