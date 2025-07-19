@@ -67,3 +67,34 @@ document.addEventListener('DOMContentLoaded', function() {
         highlightButton.addEventListener('click', highlightCurrentDay);
     }
 });
+
+// 5. Fungsi Efek Gelembung (Ripple) pada Tombol
+function createRipple(event) {
+    const button = event.currentTarget;
+
+    // Buat elemen span untuk gelembung
+    const circle = document.createElement("span");
+    const diameter = Math.max(button.clientWidth, button.clientHeight);
+    const radius = diameter / 2;
+
+    // Atur posisi gelembung tepat di lokasi klik/sentuhan
+    circle.style.width = circle.style.height = `${diameter}px`;
+    circle.style.left = `${event.clientX - (button.getBoundingClientRect().left + radius)}px`;
+    circle.style.top = `${event.clientY - (button.getBoundingClientRect().top + radius)}px`;
+    circle.classList.add("ripple");
+
+    // Hapus gelembung yang mungkin sudah ada agar tidak menumpuk
+    const ripple = button.getElementsByClassName("ripple")[0];
+    if (ripple) {
+        ripple.remove();
+    }
+
+    // Tambahkan gelembung ke tombol
+    button.appendChild(circle);
+}
+
+// Terapkan efek ke semua elemen dengan kelas .btn
+const buttons = document.querySelectorAll(".btn");
+buttons.forEach(button => {
+    button.addEventListener("click", createRipple);
+});
