@@ -95,11 +95,10 @@ document.addEventListener("click", function (event) {
     }, 600); // 600ms sesuai durasi animasi
 });
 
-// 6. Fungsi untuk Generator Kelompok Acak
+// 6. Fungsi untuk Generator Kelompok Acak (Dengan Animasi)
 const generateGroupsBtn = document.getElementById('generateGroupsBtn');
 
 if (generateGroupsBtn) {
-    // Daftar nama siswa (pastikan ini selalu update)
     const students = [
         "Ainu Syifa", "Ajeng Inova Ningrum", "Akhmad Ibnu Rafi", "Artika Dwi Indah Sari",
         "Camelia Maharani Putri", "Dania Jihan Septiandita", "Desti Mei Muti", "Desvita Shafa Felisa",
@@ -112,54 +111,64 @@ if (generateGroupsBtn) {
         "Siti Mishbaaroh", "Tri Utami Firnanda", "Uswatun Hasa'na"
     ];
 
-    function generateGroups() {
+    function handleGroupGeneration() {
         const groupCountInput = document.getElementById('groupCount');
         const resultContainer = document.getElementById('groupResult');
         const numGroups = parseInt(groupCountInput.value);
 
-        if (isNaN(numGroups) || numGroups <= 1 || numGroups > students.length) {
-            resultContainer.innerHTML = `<p style="color: red; text-align: center;">Masukkan jumlah kelompok yang valid (antara 2 dan ${students.length}).</p>`;
+        // Validasi input
+        if (isNaN(numGroups) || numGroups < 2 || numGroups > students.length) {
+            resultContainer.innerHTML = `<div class="placeholder-text" style="color: #ef4444;">Masukkan jumlah kelompok yang valid (antara 2 dan ${students.length}).</div>`;
             return;
         }
 
-        // 1. Acak urutan siswa (Fisher-Yates shuffle algorithm)
-        let shuffledStudents = [...students];
-        for (let i = shuffledStudents.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffledStudents[i], shuffledStudents[j]] = [shuffledStudents[j], shuffledStudents[i]];
-        }
+        // 1. Tampilkan animasi loading
+        resultContainer.innerHTML = `
+            <div class="shuffling-animation">
+                <div class="spinner"></div>
+                <div class="shuffling-text">Sedang mengacak kelompok...</div>
+            </div>
+        `;
+        
+        // Nonaktifkan tombol selama proses acak
+        generateGroupsBtn.disabled = true;
+        generateGroupsBtn.style.cursor = 'not-allowed';
 
-        // 2. Buat array untuk menampung kelompok
-        const groups = [];
-        for (let i = 0; i < numGroups; i++) {
-            groups.push([]);
-        }
+        // 2. Jeda waktu untuk animasi (2 detik)
+        setTimeout(() => {
+            // 3. Logika untuk mengacak dan membagi kelompok
+            let shuffledStudents = [...students];
+            for (let i = shuffledStudents.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledStudents[i], shuffledStudents[j]] = [shuffledStudents[j], shuffledStudents[i]];
+            }
 
-        // 3. Bagikan siswa ke setiap kelompok secara berurutan
-        let currentGroup = 0;
-        shuffledStudents.forEach(student => {
-            groups[currentGroup].push(student);
-            currentGroup = (currentGroup + 1) % numGroups;
-        });
-
-        // 4. Tampilkan hasilnya
-        resultContainer.innerHTML = '';
-        groups.forEach((group, index) => {
-            let membersHTML = '';
-            group.forEach(member => {
-                membersHTML += `<li>${member}</li>`;
+            const groups = Array.from({ length: numGroups }, () => []);
+            
+            let currentGroup = 0;
+            shuffledStudents.forEach(student => {
+                groups[currentGroup].push(student);
+                currentGroup = (currentGroup + 1) % numGroups;
             });
 
-            resultContainer.innerHTML += `
-                <div class="group-card">
-                    <div class="group-card-header">Kelompok ${index + 1}</div>
-                    <ul class="group-member-list">${membersHTML}</ul>
-                </div>
-            `;
-        });
+            // 4. Tampilkan hasilnya
+            resultContainer.innerHTML = '';
+            groups.forEach((group, index) => {
+                let membersHTML = group.map(member => `<li>${member}</li>`).join('');
+                resultContainer.innerHTML += `
+                    <div class="group-card">
+                        <div class="group-card-header">Kelompok ${index + 1}</div>
+                        <ul class="group-member-list">${membersHTML}</ul>
+                    </div>
+                `;
+            });
+            
+            // Aktifkan kembali tombol
+            generateGroupsBtn.disabled = false;
+            generateGroupsBtn.style.cursor = 'pointer';
+
+        }, 2000); // Durasi animasi 2000ms = 2 detik
     }
 
-    generateGroupsBtn.addEventListener('click', generateGroups);
-    // Langsung buat kelompok saat halaman pertama kali dibuka
-    generateGroups();
-        }
+    generateGroupsBtn.addEventListener('click', handleGroupGeneration);
+}
