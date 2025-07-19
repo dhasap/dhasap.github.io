@@ -22,7 +22,7 @@
         <div class="container">
             <nav class="navbar">
                 <div class="logo-container">
-                    <img src="images/logo.jpg" alt="Logo Sekolah" class="logo-img"q onerror="this.onerror=null;this.src='https://placehold.co/50x50/6366f1/ffffff?text=Logo';">
+                    <img src="images/logo.png" alt="Logo Sekolah" class="logo-img" onerror="this.onerror=null;this.src='https://placehold.co/50x50/6366f1/ffffff?text=Logo';">
                     <div>
                         <h1 class="logo-title">Sekolah Keren</h1>
                         <p class="logo-subtitle">XII TJKT 3</p>
@@ -31,7 +31,8 @@
                 <div class="nav-links">
                     <a href="index.html" class="nav-link active">Beranda</a>
                     <a href="about.html" class="nav-link">Tentang Kami</a>
-                    <a href="#contact" class="nav-link">Kontak</a>
+                    <a href="materi.html" class="nav-link">Materi & Jadwal</a>
+                    <a href="siswa.html" class="nav-link">Daftar Siswa</a>
                 </div>
                  <div class="search-bar">
                     <input type="text" placeholder="Cari materi...">
@@ -46,7 +47,8 @@
      <div class="mobile-menu" id="mobile-menu">
         <a href="index.html" class="nav-link active">Beranda</a>
         <a href="about.html" class="nav-link">Tentang Kami</a>
-        <a href="#contact" class="nav-link">Kontak</a>
+        <a href="materi.html" class="nav-link">Materi & Jadwal</a>
+        <a href="siswa.html" class="nav-link">Daftar Siswa</a>
     </div>
 
     <!-- Main Content -->
@@ -58,75 +60,21 @@
             <a href="about.html" class="btn btn-primary">Kenali Kami</a>
         </section>
 
-        <div class="main-grid">
-            <!-- Kolom Kiri -->
-            <div class="grid-left">
-                <!-- Pengumuman Terbaru -->
-                <div class="card">
-                    <h3 class="card-title"><i data-feather="bell"></i>Pengumuman Terbaru</h3>
-                    <ul class="announcement-list">
-                        <li><strong>17 Agustus 2025:</strong> Upacara HUT RI di Lapangan Sekolah.</li>
-                        <li><strong>20 Agustus 2025:</strong> Bebas mabar Honor Of kings.</li>
-                        <li><strong>25 Agustus 2025:</strong> Pembagian Rapor Semester Ganjil.</li>
-                    </ul>
-                </div>
-
-                <!-- Agenda Hari Ini -->
-                <div class="card">
-                    <h3 class="card-title"><i data-feather="list"></i>Agenda Hari Ini</h3>
-                    <ul class="agenda-list">
-                        <li><span>08.00 - 09.30:</span> Matematika (Pak Budi)</li>
-                        <li><span>10.00 - 11.30:</span> Fisika (Ibu Ani)</li>
-                        <li><span>13.00 - 14.30:</span> Bahasa Inggris (Mr. John)</li>
-                    </ul>
-                </div>
+        <!-- Anggota Kelompok -->
+        <section class="card">
+            <h3 class="card-title"><i data-feather="users"></i>Anggota Kelompok</h3>
+            <div class="member-grid">
+                <div class="member-item">Dhany</div>
+                <div class="member-item">Reza</div>
+                <div class="member-item">Farkhan</div>
+                <div class="member-item">Ilham</div>
+                <div class="member-item">Ibnu</div>
+                <div class="member-item">Rizky</div>
+                <div class="member-item">Frendy</div>
+                <div class="member-item">Nazril</div>
             </div>
+        </section>
 
-            <!-- Kolom Kanan -->
-            <div class="grid-right">
-                <!-- Kalender Akademik -->
-                <div class="card">
-                    <h3 class="card-title">Kalender Akademik - Agustus 2025</h3>
-                    <div class="calendar">
-                        <!-- Header -->
-                        <div class="day-name">Min</div><div class="day-name">Sen</div><div class="day-name">Sel</div><div class="day-name">Rab</div><div class="day-name">Kam</div><div class="day-name">Jum</div><div class="day-name">Sab</div>
-                        <!-- Dates -->
-                        <div class="day-cell other-month">27</div><div class="day-cell other-month">28</div><div class="day-cell other-month">29</div><div class="day-cell other-month">30</div><div class="day-cell other-month">31</div>
-                        <div class="day-cell">1</div><div class="day-cell">2</div><div class="day-cell">3</div><div class="day-cell">4</div><div class="day-cell">5</div><div class="day-cell">6</div><div class="day-cell">7</div><div class="day-cell">8</div><div class="day-cell">9</div><div class="day-cell">10</div><div class="day-cell">11</div><div class="day-cell">12</div><div class="day-cell">13</div><div class="day-cell">14</div>
-                        <div class="day-cell event event-ujian">15<span>Ujian</span></div>
-                        <div class="day-cell">16</div><div class="day-cell">17</div><div class="day-cell">18</div>
-                        <div class="day-cell event event-today">19</div>
-                        <div class="day-cell event event-pramuka">20<span>Pramuka</span></div>
-                        <div class="day-cell">21</div><div class="day-cell">22</div><div class="day-cell">23</div><div class="day-cell">24</div>
-                        <div class="day-cell event event-rapor">25<span>Rapor</span></div>
-                        <div class="day-cell">26</div><div class="day-cell">27</div><div class="day-cell">28</div><div class="day-cell">29</div><div class="day-cell">30</div><div class="day-cell">31</div>
-                    </div>
-                </div>
-
-                <!-- Top 5 Siswa -->
-                <div class="card">
-                    <h3 class="card-title"><i data-feather="award"></i>Top 5 Siswa</h3>
-                    <div class="table-container">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Peringkat</th>
-                                    <th>Nama</th>
-                                    <th>Nilai</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>1</td><td>Dhany (Raja Iblis)</td><td>98</td></tr>
-                                <tr><td>2</td><td>Farkhan Kun</td><td>95</td></tr>
-                                <tr><td>3</td><td>Ilham Rohim chan</td><td>93</td></tr>
-                                <tr><td>4</td><td>Reza Blonde</td><td>91</td></tr>
-                                <tr><td>5</td><td>Ustad Ibnu</td><td>89</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
 
     <!-- Footer -->
@@ -145,7 +93,7 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <!-- Main JS -->
     <script src="js/main.js"></script>
-    <!-- Animations JS -->
+    <!-- Animations JS (sudah diperbaiki) -->
     <script src="js/animations.js"></script>
 </body>
 </html>
