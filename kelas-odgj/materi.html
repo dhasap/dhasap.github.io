@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Pelajaran - Kelas XII TJKT 3</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header sticky-top">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo-container">
+                    <img src="images/logo.png" alt="Logo Sekolah" class="logo-img" onerror="this.onerror=null;this.src='https://placehold.co/50x50/6366f1/ffffff?text=Logo';">
+                    <div>
+                        <h1 class="logo-title">SMK BHAKTI PRAJA ADIWERNA</h1>
+                        <p class="logo-subtitle">XII TJKT 3</p>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="about.html" class="nav-link">Tentang Kami</a>
+                    <a href="materi.html" class="nav-link active">Jadwal Pelajaran</a>
+                    <a href="siswa.html" class="nav-link">Daftar Siswa</a>
+                </div>
+                 <div class="search-bar">
+                    <input type="text" placeholder="Cari materi...">
+                    <button><i data-feather="search"></i></button>
+                </div>
+                <button class="mobile-menu-button" id="mobile-menu-toggle">
+                    <i data-feather="menu"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="about.html" class="nav-link">Tentang Kami</a>
+        <a href="materi.html" class="nav-link active">Jadwal Pelajaran</a>
+        <a href="siswa.html" class="nav-link">Daftar Siswa</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="card">
+            <h2 class="page-title">Jadwal Pelajaran Kelas XII TJKT 3</h2>
+            <p class="page-intro">Berikut adalah jadwal pelajaran mingguan. Pastikan untuk selalu datang tepat waktu!</p>
+        </section>
+
+        <div class="schedule-grid">
+            <!-- Senin -->
+            <div class="schedule-card">
+                <div class="schedule-header">
+                    <h3>Senin</h3>
+                    <span>Pulang: 14.00</span>
+                </div>
+                <ul class="schedule-list">
+                    <li><i data-feather="book"></i> PABP (2 Jam)</li>
+                    <li><i data-feather="award"></i> PPKN (2 Jam)</li>
+                    <li><i data-feather="globe"></i> Bhs. Inggris (2 Jam)</li>
+                    <li><i data-feather="edit-3"></i> Bhs. Indonesia (2 Jam)</li>
+                </ul>
+            </div>
+            <!-- Selasa -->
+            <div class="schedule-card">
+                <div class="schedule-header">
+                    <h3>Selasa</h3>
+                    <span>Pulang: 13.20</span>
+                </div>
+                <ul class="schedule-list">
+                    <li><i data-feather="server"></i> ASJ (2 Jam)</li>
+                    <li><i data-feather="wifi"></i> AIJ (2 Jam)</li>
+                    <li><i data-feather="user-check"></i> BK (1 Jam)</li>
+                    <li><i data-feather="globe"></i> Bhs. Inggris (1 Jam)</li>
+                    <li><i data-feather="plus-square"></i> Matematika (2 Jam)</li>
+                </ul>
+            </div>
+            <!-- Rabu -->
+            <div class="schedule-card">
+                <div class="schedule-header">
+                    <h3>Rabu</h3>
+                </div>
+                <ul class="schedule-list">
+                    <li><i data-feather="settings"></i> TLJ (2 Jam)</li>
+                    <li><i data-feather="briefcase"></i> PKKW (2 Jam)</li>
+                    <li><i data-feather="wifi"></i> AIJ (4 Jam)</li>
+                </ul>
+            </div>
+            <!-- Kamis -->
+            <div class="schedule-card">
+                <div class="schedule-header">
+                    <h3>Kamis</h3>
+                    <span>Pulang: 13.20</span>
+                </div>
+                <ul class="schedule-list">
+                    <li><i data-feather="server"></i> ASJ (4 Jam)</li>
+                    <li><i data-feather="settings"></i> TLJ (4 Jam)</li>
+                </ul>
+            </div>
+            <!-- Jumat -->
+            <div class="schedule-card">
+                <div class="schedule-header">
+                    <h3>Jumat</h3>
+                    <span>Pulang: 10.50</span>
+                </div>
+                <ul class="schedule-list">
+                    <li><i data-feather="plus-square"></i> Matematika (1 Jam)</li>
+                    <li><i data-feather="book"></i> PABP (1 Jam)</li>
+                    <li><i data-feather="feather"></i> B. Jawa (1 Jam)</li>
+                    <li><i data-feather="user-check"></i> BK (1 Jam)</li>
+                </ul>
+            </div>
+            <!-- Sabtu -->
+            <div class="schedule-card">
+                <div class="schedule-header">
+                    <h3>Sabtu</h3>
+                    <span>Pulang: 12.00</span>
+                </div>
+                <ul class="schedule-list">
+                    <li><i data-feather="wifi"></i> AIJ (2 Jam)</li>
+                    <li><i data-feather="server"></i> ASJ (2 Jam)</li>
+                    <li><i data-feather="briefcase"></i> PKKW (3 Jam)</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Kelas XII TJKT 3 | Dibuat dengan <span class="heart">&hearts;</span> oleh Dhany</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+                                                                               </html>
+                               
