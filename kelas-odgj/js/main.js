@@ -50,5 +50,39 @@ if (studentSearchInput) {
         }
     });
 }
+
+    // 4. Fungsi untuk Menyorot Jadwal Hari Ini
+function highlightCurrentDay() {
+    // Mendapatkan hari saat ini (0=Minggu, 1=Senin, ..., 6=Sabtu)
+    const currentDay = new Date().getDay();
+
+    // Menargetkan semua baris di tabel jadwal
+    const scheduleRows = document.querySelectorAll('.schedule-table-clean tbody tr');
+
+    // Menghapus sorotan dari semua baris terlebih dahulu
+    scheduleRows.forEach(row => {
+        row.classList.remove('today');
+    });
+
+    // Jika hari ini adalah hari sekolah (Senin-Sabtu)
+    if (currentDay >= 1 && currentDay <= 6) {
+        // Menemukan baris yang sesuai dengan hari ini menggunakan atribut data-day
+        const todayRow = document.querySelector(`.schedule-table-clean tbody tr[data-day="${currentDay}"]`);
+        
+        if (todayRow) {
+            // Menambahkan kelas 'today' untuk menyorotnya
+            todayRow.classList.add('today');
+        }
+    }
+}
+
+// Menjalankan fungsi sorot saat halaman pertama kali dimuat
+document.addEventListener('DOMContentLoaded', highlightCurrentDay);
+
+// Menambahkan event listener ke tombol
+const highlightButton = document.getElementById('highlight-today-btn');
+if (highlightButton) {
+    highlightButton.addEventListener('click', highlightCurrentDay);
+}
     
 });
