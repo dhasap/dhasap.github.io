@@ -413,3 +413,26 @@ main {
     font-weight: 600;
     }
     
+/* === TAMBAHAN UNTUK KELOMPOK DI HALAMAN UTAMA === */
+.member-grid {
+    display: grid;
+    /* Membuat 2 kolom di layar kecil, dan bisa lebih banyak di layar besar */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.member-item {
+    background-color: #f3f4f6; /* Latar belakang abu-abu muda */
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--heading-color);
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.member-item:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
+}
