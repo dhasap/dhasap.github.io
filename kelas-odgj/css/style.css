@@ -1,82 +1,69 @@
-/* CSS/style.css */
-
-/* Variabel Warna untuk kemudahan kustomisasi */
+/* Variabel Warna */
 :root {
-    --primary-color: #4f46e5; /* Indigo */
-    --primary-hover: #4338ca;
-    --secondary-color: #10b981; /* Emerald */
-    --background-color: #f3f4f6; /* Gray 100 */
+    --primary-color: #4f46e5;
+    --background-color: #f9fafb;
     --card-bg-color: #ffffff;
-    --text-color: #374151; /* Gray 700 */
-    --heading-color: #1f2937; /* Gray 800 */
-    --border-color: #e5e7eb; /* Gray 200 */
+    --text-color: #374151;
+    --heading-color: #1f2937;
+    --border-color: #e5e7eb;
     --shadow-color: rgba(0, 0, 0, 0.05);
 }
 
-/* Reset dan Body Styling */
+/* Reset dan Body */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
     line-height: 1.6;
 }
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header and Navigation */
+/* Header dan Navigasi */
 .header {
     background-color: var(--card-bg-color);
     box-shadow: 0 2px 4px var(--shadow-color);
     padding: 15px 0;
 }
-
 .header.sticky-top {
     position: sticky;
     top: 0;
     z-index: 1000;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .logo-container {
     display: flex;
     align-items: center;
 }
-
 .logo-img {
     width: 40px;
     height: 40px;
     margin-right: 12px;
     border-radius: 8px;
 }
-
 .logo-title {
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--heading-color);
     margin: 0;
 }
-
 .logo-subtitle {
     font-size: 0.875rem;
     color: var(--text-color);
     margin: 0;
 }
-
 .nav-links {
     display: flex;
     gap: 25px;
 }
-
 .nav-link {
     color: var(--text-color);
     text-decoration: none;
@@ -85,11 +72,9 @@ body {
     position: relative;
     transition: color 0.3s;
 }
-
 .nav-link:hover, .nav-link.active {
     color: var(--primary-color);
 }
-
 .nav-link::after {
     content: '';
     position: absolute;
@@ -100,77 +85,29 @@ body {
     background-color: var(--primary-color);
     transition: width 0.3s;
 }
-
 .nav-link:hover::after, .nav-link.active::after {
     width: 100%;
 }
-
-.search-bar {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar input {
-    border: 1px solid var(--border-color);
-    padding: 8px 12px;
-    border-radius: 6px 0 0 6px;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-.search-bar input:focus {
-    border-color: var(--primary-color);
-}
-
-.search-bar button {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 0 6px 6px 0;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.search-bar button:hover {
-    background-color: var(--primary-hover);
-}
-
 .mobile-menu-button, .mobile-menu {
     display: none;
 }
 
-/* Main Content */
+/* Konten Utama */
 main {
     padding-top: 30px;
     padding-bottom: 30px;
 }
-
-.main-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 30px;
-}
-
-.grid-left, .grid-right {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-/* Card Styling */
 .card {
     background-color: var(--card-bg-color);
     border-radius: 12px;
     padding: 25px;
-    box-shadow: 0 4px 15px var(--shadow-color);
-    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
-
-.card:hover {
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+.card:last-child {
+    margin-bottom: 0;
 }
-
 .card-title {
     font-size: 1.5rem;
     font-weight: 700;
@@ -182,177 +119,13 @@ main {
     gap: 10px;
 }
 
-/* Hero Section */
-.hero-section {
-    text-align: center;
-    margin-bottom: 30px;
-    background-image: linear-gradient(45deg, var(--primary-color), #818cf8);
-    color: white;
-}
-
-.hero-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.hero-subtitle {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    margin-bottom: 25px;
-}
-
-/* Buttons */
-.btn {
-    padding: 12px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    transition: all 0.3s;
-}
-
-.btn-primary {
-    background-color: white;
-    color: var(--primary-color);
-}
-
-.btn-primary:hover {
-    background-color: #f0f0f0;
-    transform: translateY(-2px);
-}
-
-/* Lists */
-.announcement-list, .agenda-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.announcement-list li, .agenda-list li {
-    padding-bottom: 12px;
-    margin-bottom: 12px;
-    border-bottom: 1px solid var(--border-color);
-}
-.announcement-list li:last-child, .agenda-list li:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.agenda-list span {
-    font-weight: 600;
-    color: var(--heading-color);
-    display: inline-block;
-    width: 110px;
-}
-
-/* Calendar */
-.calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 8px;
-    text-align: center;
-}
-
-.day-name {
-    font-weight: 600;
-    color: var(--heading-color);
-}
-
-.day-cell {
-    padding: 10px 5px;
-    border-radius: 8px;
-    position: relative;
-    font-size: 0.9rem;
-}
-
-.day-cell.other-month {
-    color: #9ca3af; /* Gray 400 */
-}
-
-.day-cell.event {
-    color: white;
-    font-weight: 600;
-}
-
-.day-cell.event span {
-    font-size: 0.7rem;
-    position: absolute;
-    bottom: 2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-}
-
-.event-ujian { background-color: #ef4444; } /* Red */
-.event-pramuka { background-color: #10b981; } /* Green */
-.event-rapor { background-color: #3b82f6; } /* Blue */
-.event-today { background-color: #f59e0b; } /* Amber */
-
-/* Table */
-.table-container {
-    overflow-x: auto;
-}
-.data-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-.data-table th, .data-table td {
-    padding: 12px 15px;
-    text-align: left;
-}
-.data-table thead {
-    background-color: #f9fafb; /* Gray 50 */
-}
-.data-table th {
-    font-weight: 600;
-    color: var(--heading-color);
-}
-.data-table tbody tr {
-    border-bottom: 1px solid var(--border-color);
-}
-.data-table tbody tr:nth-child(even) {
-    background-color: #f9fafb;
-}
-.data-table tbody tr:last-child {
-    border-bottom: none;
-}
-.data-table td:first-child {
-    font-weight: 700;
-    color: var(--primary-color);
-}
-.data-table td:last-child {
-    text-align: right;
-    font-weight: 600;
-}
-
-/* Footer */
-.footer {
-    background-color: var(--heading-color);
-    color: #d1d5db; /* Gray 300 */
-    padding: 30px 0;
-    text-align: center;
-    margin-top: 30px;
-}
-.footer .heart {
-    color: #ef4444;
-}
-.social-links {
-    margin-top: 15px;
+/* Halaman Spesifik */
+.page-header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 20px;
 }
-.social-links a {
-    color: #d1d5db;
-    transition: color 0.3s;
-}
-.social-links a:hover {
-    color: white;
-}
-
-/* About Page Specifics */
 .page-title {
     font-size: 2rem;
     font-weight: 700;
@@ -361,9 +134,79 @@ main {
 }
 .page-intro {
     font-size: 1.1rem;
-    max-width: 800px;
+    color: #4b5563;
+}
+.about-page .page-intro {
     margin: 0 auto 20px auto;
     text-align: center;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    background-image: linear-gradient(45deg, var(--primary-color), #818cf8);
+    color: white;
+}
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.hero-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-primary {
+    background-color: white;
+    color: var(--primary-color);
+}
+.btn-primary:hover {
+    background-color: #f3f4f6;
+}
+.btn-secondary {
+    background-color: var(--text-color);
+    color: white;
+    flex-shrink: 0;
+}
+.btn-secondary:hover {
+    background-color: var(--heading-color);
+}
+.btn i {
+    width: 16px;
+    height: 16px;
+}
+
+/* Anggota Kelompok */
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+.member-item {
+    background-color: #f3f4f6;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    color: var(--heading-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+.member-item:hover {
+    background-color: var(--primary-color);
+    color: white;
 }
 .team-grid {
     display: grid;
@@ -383,67 +226,17 @@ main {
     margin: 0 0 5px 0;
     color: var(--heading-color);
 }
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-.gallery-item {
-    position: relative;
-    overflow: hidden;
+
+/* Tabel */
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #dee2e6;
     border-radius: 8px;
 }
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.4s;
-}
-.gallery-item:hover img {
-    transform: scale(1.1);
-}
-.gallery-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-    color: white;
-    padding: 20px 15px 15px;
-    font-weight: 600;
-    }
-    
-/* === TAMBAHAN UNTUK KELOMPOK DI HALAMAN UTAMA === */
-.member-grid {
-    display: grid;
-    /* Membuat 2 kolom di layar kecil, dan bisa lebih banyak di layar besar */
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
-}
-
-.member-item {
-    background-color: #f3f4f6; /* Latar belakang abu-abu muda */
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: 500;
-    color: var(--heading-color);
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-}
-
-.member-item:hover {
-    background-color: var(--primary-color);
-    color: white;
-    transform: scale(1.05);
-}
-
-/* === GAYA UNTUK HALAMAN DAFTAR SISWA === */
-
-/* Toolbar di atas tabel (untuk search, filter, dll) */
 .table-toolbar {
     margin-bottom: 20px;
 }
-
 .table-toolbar input {
     width: 100%;
     max-width: 300px;
@@ -452,26 +245,46 @@ main {
     border-radius: 8px;
     font-size: 1rem;
 }
-
 .table-toolbar input:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
 }
 
-/* Kustomisasi tabel siswa */
+/* Tabel Siswa */
 .student-table img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
 }
-
 .student-table td, .student-table th {
     vertical-align: middle;
 }
-
-/* Styling untuk label gender */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.data-table th, .data-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+.data-table thead {
+    background-color: #f9fafb;
+}
+.data-table th {
+    font-weight: 600;
+    color: var(--heading-color);
+}
+.data-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+}
+.data-table tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+.data-table tbody tr:last-child {
+    border-bottom: none;
+}
 .gender {
     padding: 4px 12px;
     border-radius: 20px;
@@ -481,83 +294,60 @@ main {
     text-transform: capitalize;
     display: inline-block;
 }
+.gender.perempuan { background-color: #ec4899; }
+.gender.laki-laki { background-color: #3b82f6; }
 
-.gender.perempuan {
-    background-color: #ec4899; /* Pink */
-}
-
-.gender.laki-laki {
-    background-color: #3b82f6; /* Blue */
-}
-
-/* === GAYA FINAL UNTUK TABEL JADWAL (FIXED LAYOUT) === */
-
-/* Kontainer tabel, ini yang membuat bisa di-scroll */
-.table-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* Scroll halus di iOS */
-}
-
+/* Tabel Jadwal Final */
 .schedule-table-fixed {
     width: 100%;
-    min-width: 1000px; /* Lebar minimum agar tabel tidak hancur */
+    min-width: 1000px;
     border-collapse: collapse;
     text-align: center;
     font-size: 0.9rem;
-    border: 1px solid #dee2e6;
 }
-
-/* Header Tabel */
 .schedule-table-fixed thead th {
     background-color: #f8f9fa;
     color: var(--heading-color);
-    padding: 10px 5px;
+    padding: 12px 8px;
     font-weight: 600;
     vertical-align: middle;
     border: 1px solid #dee2e6;
-    white-space: nowrap; /* Mencegah teks header wrapping */
+    white-space: nowrap;
+    font-size: 0.9rem;
 }
 .schedule-table-fixed thead th small {
     font-weight: 400;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     display: block;
     color: var(--text-color);
 }
 .schedule-table-fixed thead .break-col-header {
-    font-size: 0.8rem;
     font-weight: 500;
     text-transform: uppercase;
     background-color: #e9ecef;
 }
-
-/* Body Tabel */
 .schedule-table-fixed tbody td {
     border: 1px solid #dee2e6;
-    padding: 0; /* Padding diatur di dalam .subject-cell */
+    padding: 0;
     vertical-align: middle;
     height: 80px;
 }
-
-/* Sel Hari */
 .day-col {
     font-weight: 700;
     background-color: #f8f9fa;
-    width: 90px;
-    padding: 15px 5px;
-    white-space: nowrap;
+    width: 110px;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    border-right: 2px solid #ced4da;
 }
-
-/* Sel Istirahat */
 .break-col-body {
     background-color: #f1f3f5;
+    min-width: 50px;
 }
-
-/* Sel Kosong */
 .empty-col {
     background-color: #f8f9fa;
 }
-
-/* Konten di dalam sel mata pelajaran (INI PERBAIKAN UTAMA) */
 .subject-cell {
     width: 100%;
     height: 100%;
@@ -567,22 +357,19 @@ main {
     align-items: center;
     padding: 8px;
     box-sizing: border-box;
-    line-height: 1.4; /* Memberi sedikit ruang antar baris */
+    line-height: 1.4;
+    white-space: nowrap;
 }
 .subject-cell span {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--heading-color);
-    display: block; /* Memaksa ke baris baru */
 }
 .subject-cell small {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--text-color);
     margin-top: 4px;
-    display: block; /* Memaksa ke baris baru */
 }
-
-/* Gaya untuk baris yang disorot */
 .schedule-table-fixed tbody tr.today {
     outline: 2px solid var(--primary-color);
     outline-offset: -2px;
@@ -591,8 +378,6 @@ main {
     background-color: var(--primary-color);
     color: white;
 }
-
-/* Warna Latar Belakang Mata Pelajaran */
 .subject-pabp { background-color: #fff9db; }
 .subject-ppkn { background-color: #ffeded; }
 .subject-bing { background-color: #eefcff; }
@@ -605,37 +390,14 @@ main {
 .subject-bk { background-color: #f8f9fa; }
 .subject-bjawa { background-color: #fff7ed; }
 
-/* === GAYA UNTUK JADWAL INTERAKTIF === */
-
-/* Layout untuk header halaman dengan tombol */
-.page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.btn-secondary {
-    background-color: var(--text-color);
-    color: white;
-    flex-shrink: 0; /* Mencegah tombol menyusut */
-}
-.btn-secondary:hover {
+/* Footer */
+.footer {
     background-color: var(--heading-color);
+    color: #d1d5db;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 30px;
 }
-.btn i {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-}
-
-/* Gaya untuk baris hari ini yang disorot oleh JavaScript */
-.schedule-table-clean tbody tr.today {
-    outline: 2px solid var(--primary-color);
-    outline-offset: -2px;
-}
-
-.schedule-table-clean tbody tr.today .day-col {
-    background-color: var(--primary-color);
-    color: white;
+.footer .heart {
+    color: #ef4444;
 }
