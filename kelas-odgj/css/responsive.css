@@ -25,17 +25,27 @@
         width: 28px;
         height: 28px;
     }
-    .mobile-menu {
-        display: none;
-        flex-direction: column;
-        background-color: white;
-        width: 100%;
-        position: absolute;
-        top: 71px;
-        left: 0;
-        box-shadow: 0 4px 6px var(--shadow-color);
-        padding: 10px 0;
-        z-index: 999;
+    /* Cari blok .mobile-menu yang lama di file responsive.css */
+
+/* DAN GANTI SELURUHNYA DENGAN YANG INI: */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    
+    /* INI PERBAIKAN UTAMA: Mengubah posisi dari absolute menjadi fixed */
+    position: fixed; 
+    top: 71px; /* Jarak dari atas, sesuaikan dengan tinggi header Anda */
+    left: 0;
+    
+    /* Menambahkan tinggi maksimal dan scroll jika item menu banyak */
+    max-height: calc(100vh - 71px);
+    overflow-y: auto;
+
+    box-shadow: 0 4px 6px var(--shadow-color);
+    padding: 10px 0;
+    z-index: 999; /* Pastikan z-index tetap tinggi */
     }
     .mobile-menu.active {
         display: flex;
