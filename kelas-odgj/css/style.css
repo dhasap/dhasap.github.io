@@ -493,3 +493,49 @@ body {
 .group-member-list li:last-child {
     border-bottom: none;
 }
+
+/* === GAYA UNTUK ANIMASI ACAK KELOMPOK === */
+
+/* Teks placeholder sebelum hasil muncul */
+.placeholder-text {
+    grid-column: 1 / -1; /* Membuatnya memenuhi seluruh lebar grid */
+    text-align: center;
+    color: #6b7280;
+    padding: 40px 20px;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    font-style: italic;
+}
+
+/* Kontainer untuk animasi loading */
+.shuffling-animation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1 / -1;
+    padding: 40px 20px;
+    min-height: 150px;
+}
+
+/* Spinner yang berputar */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f4f6; /* Warna dasar spinner */
+    border-top: 5px solid var(--primary-color); /* Warna putaran spinner */
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+    margin-bottom: 15px;
+}
+
+.shuffling-text {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Animasi keyframe untuk putaran spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
