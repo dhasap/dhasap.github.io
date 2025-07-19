@@ -436,3 +436,56 @@ main {
     color: white;
     transform: scale(1.05);
 }
+
+/* === GAYA UNTUK HALAMAN DAFTAR SISWA === */
+
+/* Toolbar di atas tabel (untuk search, filter, dll) */
+.table-toolbar {
+    margin-bottom: 20px;
+}
+
+.table-toolbar input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.table-toolbar input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+/* Kustomisasi tabel siswa */
+.student-table img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.student-table td, .student-table th {
+    vertical-align: middle;
+}
+
+/* Styling untuk label gender */
+.gender {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+.gender.perempuan {
+    background-color: #ec4899; /* Pink */
+}
+
+.gender.laki-laki {
+    background-color: #3b82f6; /* Blue */
+}
