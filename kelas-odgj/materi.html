@@ -52,85 +52,77 @@
     <main class="container">
         <section class="card">
             <h2 class="page-title">Jadwal Pelajaran Kelas XII TJKT 3</h2>
-            <p class="page-intro">Berikut adalah jadwal pelajaran mingguan. Pastikan untuk selalu datang tepat waktu!</p>
+            <p class="page-intro">Berikut adalah jadwal pelajaran dalam format tabel mingguan. Di layar kecil, tabel bisa digeser ke samping.</p>
         </section>
 
-        <div class="schedule-grid">
-            <!-- Senin -->
-            <div class="schedule-card">
-                <div class="schedule-header">
-                    <h3>Senin</h3>
-                    <span>Pulang: 14.00</span>
-                </div>
-                <ul class="schedule-list">
-                    <li><i data-feather="book"></i> PABP (2 Jam)</li>
-                    <li><i data-feather="award"></i> PPKN (2 Jam)</li>
-                    <li><i data-feather="globe"></i> Bhs. Inggris (2 Jam)</li>
-                    <li><i data-feather="edit-3"></i> Bhs. Indonesia (2 Jam)</li>
-                </ul>
+        <section class="card">
+            <div class="table-container">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Jam</th>
+                            <th>Senin</th>
+                            <th>Selasa</th>
+                            <th>Rabu</th>
+                            <th>Kamis</th>
+                            <th>Jumat</th>
+                            <th>Sabtu</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="time-col">Ke 1-2</td>
+                            <td class="subject-pabp" rowspan="2">PABP</td>
+                            <td class="subject-asj" rowspan="2">ASJ</td>
+                            <td class="subject-tlj" rowspan="2">TLJ</td>
+                            <td class="subject-asj" rowspan="4">ASJ</td>
+                            <td class="subject-mat">Matematika</td>
+                            <td class="subject-aij" rowspan="2">AIJ</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">Ke 3-4</td>
+                            <td class="subject-pabp">PABP</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">Ke 5-6</td>
+                            <td class="subject-ppkn" rowspan="2">PPKN</td>
+                            <td class="subject-aij" rowspan="2">AIJ</td>
+                            <td class="subject-pkkw" rowspan="2">PKKW</td>
+                            <td class="subject-bjawa">B. Jawa</td>
+                            <td class="subject-asj" rowspan="2">ASJ</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">Istirahat</td>
+                            <td class="break-col" colspan="6">Istirahat</td>
+                        </tr>
+                        <tr>
+                            <td class="time-col">Ke 7-8</td>
+                            <td class="subject-bing" rowspan="2">Bhs. Inggris</td>
+                            <td>BK</td>
+                            <td class="subject-aij" rowspan="4">AIJ</td>
+                            <td class="subject-tlj" rowspan="4">TLJ</td>
+                            <td class="subject-bk">BK</td>
+                            <td class="subject-pkkw" rowspan="3">PKKW</td>
+                        </tr>
+                        <tr>
+                             <td class="time-col">Ke 9-10</td>
+                            <td>Bhs. Inggris</td>
+                        </tr>
+                        <tr>
+                             <td class="time-col">Istirahat</td>
+                            <td class="break-col" colspan="6">Istirahat Sholat</td>
+                        </tr>
+                        <tr>
+                             <td class="time-col">Ke 11-12</td>
+                            <td class="subject-bindo" rowspan="2">Bhs. Indonesia</td>
+                            <td class="subject-mat" rowspan="2">Matematika</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <!-- Selasa -->
-            <div class="schedule-card">
-                <div class="schedule-header">
-                    <h3>Selasa</h3>
-                    <span>Pulang: 13.20</span>
-                </div>
-                <ul class="schedule-list">
-                    <li><i data-feather="server"></i> ASJ (2 Jam)</li>
-                    <li><i data-feather="wifi"></i> AIJ (2 Jam)</li>
-                    <li><i data-feather="user-check"></i> BK (1 Jam)</li>
-                    <li><i data-feather="globe"></i> Bhs. Inggris (1 Jam)</li>
-                    <li><i data-feather="plus-square"></i> Matematika (2 Jam)</li>
-                </ul>
-            </div>
-            <!-- Rabu -->
-            <div class="schedule-card">
-                <div class="schedule-header">
-                    <h3>Rabu</h3>
-                </div>
-                <ul class="schedule-list">
-                    <li><i data-feather="settings"></i> TLJ (2 Jam)</li>
-                    <li><i data-feather="briefcase"></i> PKKW (2 Jam)</li>
-                    <li><i data-feather="wifi"></i> AIJ (4 Jam)</li>
-                </ul>
-            </div>
-            <!-- Kamis -->
-            <div class="schedule-card">
-                <div class="schedule-header">
-                    <h3>Kamis</h3>
-                    <span>Pulang: 13.20</span>
-                </div>
-                <ul class="schedule-list">
-                    <li><i data-feather="server"></i> ASJ (4 Jam)</li>
-                    <li><i data-feather="settings"></i> TLJ (4 Jam)</li>
-                </ul>
-            </div>
-            <!-- Jumat -->
-            <div class="schedule-card">
-                <div class="schedule-header">
-                    <h3>Jumat</h3>
-                    <span>Pulang: 10.50</span>
-                </div>
-                <ul class="schedule-list">
-                    <li><i data-feather="plus-square"></i> Matematika (1 Jam)</li>
-                    <li><i data-feather="book"></i> PABP (1 Jam)</li>
-                    <li><i data-feather="feather"></i> B. Jawa (1 Jam)</li>
-                    <li><i data-feather="user-check"></i> BK (1 Jam)</li>
-                </ul>
-            </div>
-            <!-- Sabtu -->
-            <div class="schedule-card">
-                <div class="schedule-header">
-                    <h3>Sabtu</h3>
-                    <span>Pulang: 12.00</span>
-                </div>
-                <ul class="schedule-list">
-                    <li><i data-feather="wifi"></i> AIJ (2 Jam)</li>
-                    <li><i data-feather="server"></i> ASJ (2 Jam)</li>
-                    <li><i data-feather="briefcase"></i> PKKW (3 Jam)</li>
-                </ul>
-            </div>
-        </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -145,5 +137,4 @@
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
 </body>
-                                                                               </html>
-                               
+</html>
