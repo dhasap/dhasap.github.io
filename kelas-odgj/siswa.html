@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Siswa - Kelas XII TJKT 3</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header sticky-top">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo-container">
+                    <img src="images/logo.png" alt="Logo Sekolah" class="logo-img" onerror="this.onerror=null;this.src='https://placehold.co/50x50/6366f1/ffffff?text=Logo';">
+                    <div>
+                        <h1 class="logo-title">Sekolah Keren</h1>
+                        <p class="logo-subtitle">XII TJKT 3</p>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="about.html" class="nav-link">Tentang Kami</a>
+                    <a href="materi.html" class="nav-link">Materi & Jadwal</a>
+                    <a href="siswa.html" class="nav-link active">Daftar Siswa</a>
+                </div>
+                 <div class="search-bar">
+                    <input type="text" placeholder="Cari materi...">
+                    <button><i data-feather="search"></i></button>
+                </div>
+                <button class="mobile-menu-button" id="mobile-menu-toggle">
+                    <i data-feather="menu"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html" class="nav-link">Beranda</a>
+        <a href="about.html" class="nav-link">Tentang Kami</a>
+        <a href="materi.html" class="nav-link">Materi & Jadwal</a>
+        <a href="siswa.html" class="nav-link active">Daftar Siswa</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section class="card">
+            <h2 class="page-title">Daftar Siswa Kelas XII TJKT 3</h2>
+            <p class="page-intro">Berikut adalah daftar lengkap siswa beserta nomor absen dan gender.</p>
+        </section>
+
+        <section class="card">
+             <div class="table-toolbar">
+                <input type="text" id="studentSearchInput" placeholder="Cari nama siswa...">
+            </div>
+            <div class="table-container">
+                <table class="data-table student-table">
+                    <thead>
+                        <tr>
+                            <th>No. Absen</th>
+                            <th>Foto</th>
+                            <th>Nama Lengkap</th>
+                            <th>Gender</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <tr><td>1</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=AS" alt="Foto Siswa"></td><td>Ainu Syifa</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>2</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=AI" alt="Foto Siswa"></td><td>Ajeng Inova Ningrum</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>3</td><td><img src="https://placehold.co/40x40/dbeafe/1e40af?text=AI" alt="Foto Siswa"></td><td>Akhmad Ibnu Rafi</td><td><span class="gender laki-laki">Laki-laki</span></td></tr>
+                        <tr><td>4</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=AD" alt="Foto Siswa"></td><td>Artika Dwi Indah Sari</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>5</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=CM" alt="Foto Siswa"></td><td>Camelia Maharani Putri</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>6</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=DJ" alt="Foto Siswa"></td><td>Dania Jihan Septiandita</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>7</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=DM" alt="Foto Siswa"></td><td>Desti Mei Muti</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>8</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=DS" alt="Foto Siswa"></td><td>Desvita Shafa Felisa</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>9</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=DN" alt="Foto Siswa"></td><td>Dian Noviyanti</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>10</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=DA" alt="Foto Siswa"></td><td>Dinda Adellia</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>11</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=DN" alt="Foto Siswa"></td><td>Dwi Nur Faizah</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>12</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=EL" alt="Foto Siswa"></td><td>Evi Lutfita Sari</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>13</td><td><img src="https://placehold.co/40x40/dbeafe/1e40af?text=FR" alt="Foto Siswa"></td><td>Farkhan Ramdani</td><td><span class="gender laki-laki">Laki-laki</span></td></tr>
+                        <tr><td>14</td><td><img src="https://placehold.co/40x40/dbeafe/1e40af?text=FH" alt="Foto Siswa"></td><td>Frandy Hermawan</td><td><span class="gender laki-laki">Laki-laki</span></td></tr>
+                        <tr><td>15</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=GJ" alt="Foto Siswa"></td><td>Gita Juliyanti</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>16</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=HR" alt="Foto Siswa"></td><td>Hani Rahmawati</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>17</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=IL" alt="Foto Siswa"></td><td>Izzah Luthfiana Dewi</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>18</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=J" alt="Foto Siswa"></td><td>Jumaroh</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>19</td><td><img src="https://placehold.co/40x40/dbeafe/1e40af?text=MD" alt="Foto Siswa"></td><td>M.Dhany Saputra</td><td><span class="gender laki-laki">Laki-laki</span></td></tr>
+                        <tr><td>20</td><td><img src="https://placehold.co/40x40/dbeafe/1e40af?text=MI" alt="Foto Siswa"></td><td>M. Ilham Saifa Rohim</td><td><span class="gender laki-laki">Laki-laki</span></td></tr>
+                        <tr><td>21</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=MD" alt="Foto Siswa"></td><td>Monika Dwi Cahyaningsih</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>22</td><td><img src="https://placehold.co/40x40/dbeafe/1e40af?text=MK" alt="Foto Siswa"></td><td>Muh. Kenar Alva Reza</td><td><span class="gender laki-laki">Laki-laki</span></td></tr>
+                        <tr><td>23</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=ND" alt="Foto Siswa"></td><td>Nadia Dwi Safitri</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>24</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=NS" alt="Foto Siswa"></td><td>Naesya Salsa Bila</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>25</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=NF" alt="Foto Siswa"></td><td>Nayli Farkhatun</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>26</td><td><img src="https://placehold.co/40x40/dbeafe/1e40af?text=NI" alt="Foto Siswa"></td><td>Nazril Ilham Maulana</td><td><span class="gender laki-laki">Laki-laki</span></td></tr>
+                        <tr><td>27</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=NF" alt="Foto Siswa"></td><td>Niken Febrianti</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>28</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=NB" alt="Foto Siswa"></td><td>Ni'matul Bilkis</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>29</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=PA" alt="Foto Siswa"></td><td>Puji Ani</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>30</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=RN" alt="Foto Siswa"></td><td>Reygina Nugraha</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>31</td><td><img src="https://placehold.co/40x40/dbeafe/1e40af?text=RA" alt="Foto Siswa"></td><td>Rizki Awal Ramadhani</td><td><span class="gender laki-laki">Laki-laki</span></td></tr>
+                        <tr><td>32</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=RM" alt="Foto Siswa"></td><td>Rizky Maulida</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>33</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=SM" alt="Foto Siswa"></td><td>Sefina Media Sari</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>34</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=SA" alt="Foto Siswa"></td><td>Sella Astiana</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>35</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=SD" alt="Foto Siswa"></td><td>Sinta Dwi Anjani</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>36</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=SM" alt="Foto Siswa"></td><td>Siti Mishbaaroh</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>37</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=TU" alt="Foto Siswa"></td><td>Tri Utami Firnanda</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                        <tr><td>38</td><td><img src="https://placehold.co/40x40/fecdd3/881337?text=UH" alt="Foto Siswa"></td><td>Uswatun Hasa'na</td><td><span class="gender perempuan">Perempuan</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Kelas XII TJKT 3 | Dibuat dengan <span class="heart">&hearts;</span> oleh Dhany</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
