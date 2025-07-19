@@ -167,7 +167,7 @@ if (generateGroupsBtn) {
             generateGroupsBtn.disabled = false;
             generateGroupsBtn.style.cursor = 'pointer';
 
-        }, 2000); // Durasi animasi 2000ms = 2 detik
+        }, 7000); // Durasi animasi 7000ms = 7 detik
     }
 
     generateGroupsBtn.addEventListener('click', handleGroupGeneration);
