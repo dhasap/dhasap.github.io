@@ -43,20 +43,13 @@
 
     <main class="container">
         <section class="card">
-            <div class="page-header">
-                <div>
-                    <h2 class="page-title">Jadwal Pelajaran Kelas XII TJKT 3</h2>
-                    <p class="page-intro">Jadwal hari ini disorot otomatis. Geser tabel jika perlu.</p>
-                </div>
-                <button id="highlight-today-btn" class="btn btn-secondary">
-                    <i data-feather="sun"></i> Sorot Hari Ini
-                </button>
-            </div>
+            <h2 class="page-title">Jadwal Pelajaran Kelas XII TJKT 3</h2>
+            <p class="page-intro">Jadwal hari ini disorot otomatis. Di layar kecil, tabel bisa digeser ke samping.</p>
         </section>
 
         <section class="card">
             <div class="table-container">
-                <table class="schedule-table-clean">
+                <table class="schedule-table-fixed">
                     <thead>
                         <tr>
                             <th>Hari</th>
@@ -77,9 +70,9 @@
                         <tr data-day="1">
                             <td class="day-col">Senin</td>
                             <td colspan="2"><div class="subject-cell subject-pabp"><span>PABP</span><small>Guru A</small></div></td>
-                            <td><div class="subject-cell subject-ppkn"><span>PPKN</span><small>Guru B</small></div></td>
+                            <td colspan="1"><div class="subject-cell subject-ppkn"><span>PPKN</span><small>Guru B</small></div></td>
                             <td rowspan="6" class="break-col-body"></td>
-                            <td><div class="subject-cell subject-ppkn"><span>PPKN</span><small>Guru B</small></div></td>
+                            <td colspan="1"><div class="subject-cell subject-ppkn"><span>PPKN</span><small>Guru B</small></div></td>
                             <td colspan="2"><div class="subject-cell subject-bing"><span>Bhs. Inggris</span><small>Guru C</small></div></td>
                             <td rowspan="6" class="break-col-body"></td>
                             <td colspan="2"><div class="subject-cell subject-bindo"><span>Bhs. Indonesia</span><small>Guru D</small></div></td>
@@ -139,4 +132,5 @@
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
 </body>
-</html>
+    </html>
+    
