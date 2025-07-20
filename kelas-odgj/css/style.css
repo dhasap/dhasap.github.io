@@ -425,7 +425,7 @@ body {
 /* Animasi untuk efek gelembung membesar dan menghilang */
 @keyframes ripple-effect {
     to {
-        transform: scale(4);
+        transform: scale(2);
         opacity: 0;
     }
 }
