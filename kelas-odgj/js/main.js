@@ -81,9 +81,9 @@ document.addEventListener("click", function (event) {
     const radius = diameter / 2;
 
     // Atur posisi gelembung tepat di lokasi kursor
-    circle.style.width = circle.style.height = `100px`;
-    circle.style.left = `${event.pageX - 50}px`; // pageX memperhitungkan scroll
-    circle.style.top = `${event.pageY - 50}px`;  // pageY memperhitungkan scroll
+    circle.style.width = circle.style.height = `60px`;
+    circle.style.left = `${event.pageX - 30}px`; // pageX memperhitungkan scroll
+    circle.style.top = `${event.pageY - 30}px`;  // pageY memperhitungkan scroll
     circle.classList.add("ripple-body");
 
     // Tambahkan gelembung ke body
